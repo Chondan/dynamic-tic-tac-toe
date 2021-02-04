@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+* {
+	box-sizing: border-box;
+	padding: 2px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+	margin: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+	cursor: pointer;
+	margin: 5px;
+	font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.shadow {
+	box-shadow: 1px 1px 2px grey;
 }
 
-.App-link {
-  color: #61dafb;
+/* Setting buttons*/
+.start-btn {
+	color: green;
+}
+.reset-btn {
+	color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Layout */
+.game-body {
+	display: flex;
+	padding: 20px;
+}
+.game-body-left {
+	width: 70%;
+}
+.game-body-right {
+	width: 30%;
+}
+.instruction {
+	padding: 20px;
+	margin-bottom: 10px;
+}
+.setting {
+	margin: 10px;
+}
+.info {
+	text-align: center;
+}
+
+/* Game table */
+table {
+	border-collapse: collapse;
+	margin: auto;
+}
+.cell {
+	cursor: pointer;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	font-size: xx-large;
+}
+.cell:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.history {
+	border: 1px solid black;
+	height: 100%;
+	overflow: auto;
+	max-height: 400px;
+	padding: 10px;
+}
+.history ul {
+	list-style: none;
+}
+.history-list {
+	cursor: pointer;
+}
+.history-list:hover {
+	color: red !important;
+}
+
+@media only screen and (max-width: 400px) {
+	.game-body {
+		flex-direction: column;
+	}
+	.game-body-left {
+		width: 100%;
+	}
+	.game-body-right {
+		width: 100%;
+	}
 }
