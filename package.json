@@ -1,5 +1,6 @@
 {
   "name": "dynamic-tic-tac-toe",
+  "homepage": "https://chondan.github.io/dynamic-tic-tac-toe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
