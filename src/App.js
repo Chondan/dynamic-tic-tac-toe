@@ -38,6 +38,7 @@ function App() {
   const [winner, setWinner] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [consecutiveWins, setConsecutiveWins] = useState(3);
+  const [replaying, setReplaying] = useState(false); // cannot reset the game while replaying
 
   const handleGameStart = (size, consecutiveWins) => {
     setBoardSize(size);
@@ -62,6 +63,7 @@ function App() {
     setWinner(null);
     setTurn('p1');
     setGameOver(false);
+    setReplaying(false);
   }
 
   const handleRewind = (historyObj) => {
@@ -117,13 +119,15 @@ function App() {
       <div className="game-body shadow">
         <div className="game-body-left">
           <Setting  boardSize={boardSize} handleGameStart={handleGameStart} gameStart={gameStart}
-            handleGameReset={handleGameReset}
+            handleGameReset={handleGameReset} replaying={replaying}
           />
           <Info turn={turn} winner={winner} square={square} />
           <GameBoard boardSize={boardSize} handleCellClick={handleCellClick} table={table} />
         </div>
         <div className="game-body-right">
-          <History turn={turn} history={history} handleRewind={handleRewind} turnId={turnId}/>
+          <History turn={turn} history={history} handleRewind={handleRewind} turnId={turnId}
+            setReplaying={setReplaying}
+          />
         </div>
       </div>
     </div>

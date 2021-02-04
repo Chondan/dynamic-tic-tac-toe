@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 // Change board's size -> { 3, 5, 7, .. }
 const Setting = ({
-	boardSize, handleGameStart, gameStart, handleGameReset
+	boardSize, handleGameStart, gameStart, handleGameReset, replaying
 }) => {
 
 	const [size, setSize] = useState(boardSize);
@@ -29,7 +29,7 @@ const Setting = ({
 				disabled={gameStart}
 			/><br />
 			<button className="start-btn" onClick={() => handleGameStart(+input.value, +consecutive.value)} disabled={gameStart}>Start</button>
-			<button className="reset-btn" onClick={handleGameReset}>Reset</button>
+			<button className="reset-btn" onClick={handleGameReset} disabled={replaying}>Reset</button>
 		</div>
 	);
 }

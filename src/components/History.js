@@ -13,15 +13,38 @@ const List = ({
 	);
 }
 
+const Replay = ({
+	onClick
+}) => {
+
+	return (
+		<div>
+			<button onClick={onClick}>Replay</button>
+		</div>
+	);
+}
+
 const History = ({
-	history, handleRewind, turnId: currentTurnId
+	history, handleRewind, turnId: currentTurnId, setReplaying
 }) => {
 
 	const histories = Object.keys(history);
 
+	const handleReplay = (speed) => {
+		// speed in milli-second
+		for (let i = 0; i < histories.length; i++) {
+			setReplaying(true);
+			setTimeout(() => {
+				handleRewind(history[histories[i]])
+				if (i === histories.length - 1) setReplaying(false);
+			}, i * speed);
+		}
+	}
+
 	return (
 		<div className="history">
 			<b>History</b>
+			<Replay onClick={() => handleReplay(500)} />
 			<ul>
 				{
 					histories.map(historyId => (
