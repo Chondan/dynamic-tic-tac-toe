@@ -105,7 +105,7 @@ function App() {
     setWinner(winner);
 
     // game over
-    if (winner) setGameOver(true);
+    if (winner) return setGameOver(true);
     if (square === boardSize * boardSize && turnId === latestTurnId) setWinner('tie');
 
   }, [table, boardSize, square, consecutiveWins, turnId, latestTurnId]);
