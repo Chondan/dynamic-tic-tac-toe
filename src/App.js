@@ -47,8 +47,8 @@ function App() {
     setConsecutiveWins(consecutiveWins);
 
     // set starting table
-    let startingTable = Array(+size).fill(null);
-    startingTable = startingTable.map(n => Array(+size).fill(null));
+    let startingTable = Array(size).fill(null);
+    startingTable = startingTable.map(n => Array(size).fill(null));
     setTable(startingTable);
   }
 
@@ -106,7 +106,6 @@ function App() {
 
     // game over
     if (winner) setGameOver(true);
-
     if (square === boardSize * boardSize && turnId === latestTurnId) setWinner('tie');
 
   }, [table, boardSize, square, consecutiveWins, turnId, latestTurnId]);

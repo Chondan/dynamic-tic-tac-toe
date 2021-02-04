@@ -26,16 +26,6 @@ button {
 }
 
 /* Layout */
-.game-body {
-	display: flex;
-	padding: 20px;
-}
-.game-body-left {
-	width: 70%;
-}
-.game-body-right {
-	width: 30%;
-}
 .instruction {
 	padding: 20px;
 	margin-bottom: 10px;
@@ -43,14 +33,10 @@ button {
 .setting {
 	margin: 10px;
 }
-.info {
-	text-align: center;
-}
 
 /* Game table */
 table {
 	border-collapse: collapse;
-	margin: auto;
 }
 .cell {
 	cursor: pointer;
@@ -78,16 +64,4 @@ table {
 }
 .history-list:hover {
 	color: red !important;
-}
-
-@media only screen and (max-width: 400px) {
-	.game-body {
-		flex-direction: column;
-	}
-	.game-body-left {
-		width: 100%;
-	}
-	.game-body-right {
-		width: 100%;
-	}
 }

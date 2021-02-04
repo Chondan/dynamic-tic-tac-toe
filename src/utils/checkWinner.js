@@ -3,7 +3,7 @@ const whoIsWinner = (table ,consecutiveWin) => {
 
 	if (!table) return null;
 	const size = table.length;
-	const rule = +consecutiveWin;
+	const rule = (+consecutiveWin) > size ? size : +consecutiveWin;
 
 	// check row 
 	for (let row = 0; row < size; row++) {

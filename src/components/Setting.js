@@ -12,7 +12,8 @@ const Setting = ({
 
 	const handleSizeChange = () => {
 		setSize(input.value);
-		if (win > input.value) setWin(input.value);
+		setWin(3);
+		if (win > +input.value) setWin(+input.value);
 	}
 
 	return (
@@ -24,10 +25,10 @@ const Setting = ({
 			 /><br />
 			<b>Consecutive X to Win</b>{' '}
 			<input type="number" min={3} max={size} value={win}
-				ref={node => consecutive = node} onChange={() => setWin(consecutive.value)}
+				ref={node => consecutive = node} onChange={() => setWin(+consecutive.value)}
 				disabled={gameStart}
 			/><br />
-			<button className="start-btn" onClick={() => handleGameStart(input.value, consecutive.value)} disabled={gameStart}>Start</button>
+			<button className="start-btn" onClick={() => handleGameStart(+input.value, +consecutive.value)} disabled={gameStart}>Start</button>
 			<button className="reset-btn" onClick={handleGameReset}>Reset</button>
 		</div>
 	);
